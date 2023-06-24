@@ -18,6 +18,7 @@ exports.getAllUsers = async (req, res) => {
 };
 
 exports.createUser = async (req, res) => {
+  
     const { name, email, phone } = req.body;
     if (!name || !email || !phone) {
         res.status(400).json({
@@ -57,6 +58,7 @@ exports.updateUser = async (req, res) => {
     try {
     const { id } = req.params
     const updatedData = req.body
+    
 
     const result = await userService.updateUser(id, updatedData);
     res.status(200).json({
